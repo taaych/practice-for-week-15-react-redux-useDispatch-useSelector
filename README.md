@@ -4,10 +4,13 @@ In this short practice, you will list the titles of articles by loading data
 into the Redux store and then having a component _subscribe to_ / listen for
 changes to that data.
 
-## Setup
+## Set up
 
-Click the `Download Project` button at the bottom of this page to go to the
-starter repo, then load the repo into [CodeSandbox].
+Clone the starter repo accessible from the `Download Project` button at the
+bottom of this page and `cd` into the root directory.
+
+1. Run `npm install` to load all the dependencies.
+2. Run `npm start` to start the server and run your app `localhost:3000`.
 
 ## `useDispatch`
 
@@ -20,8 +23,7 @@ functionality available. Create a `useEffect` function that `dispatch`es the
 `loadArticles` function. It should only run one time. This will load the article
 data into the store after the first render.
 
-After completing the `useEffect`, click the `Open In New Window` button in the
-upper right of your sandbox browser. In the new window, pull up the Redux
+After completing the `useEffect`, go to your browser and pull up the Redux
 DevTools. On the inspector side of the tools, click on the
 `/articles/loadArticles` action. On the right side, click the `State` tab. When
 opening the results you should see that the `entries` array has now been filled
@@ -41,9 +43,9 @@ const ArticleList = () => {
 
   useEffect(() => {
       dispatch(loadArticles());
-  }, [])
+  }, []);
 
-  return (...)
+  return (...);
 }
 ```
 
@@ -74,7 +76,7 @@ variable called `articles` and assign it the value of an invoked `useSelector`.
 The `useSelector` takes a callback function as an argument. The argument in the
 callback function is the entire Redux `state`. Place state as the argument of
 the callback function, then return `console.log('state', state)`. Now take a
-look in the browser DevTools console. The log should show the entire store.
+look in the browser's console. The log should show the entire store.
 
 You, however, only need the `entries` key from the `articleReducer`. Notice in
 the console that, in order to key into the article state, you must first key
@@ -92,7 +94,7 @@ If you have been successful, the code should look similar to this:
 const articles = useSelector(state=>state.articleState.entries);
 ```
 
-## Fill in the Information from the `useSelector`
+## Fill in the information from the `useSelector`
 
 Now that the information has been received by the `articles` variable, it is
 possible to use the data from the store inside the JSX. Each link from the
@@ -128,6 +130,5 @@ If you are successful, your code should look similar to this:
 2. Use the `useSelector` hook to subscribe to the store and listen for changes
    in state.
 
-[CodeSandbox]: https://codesandbox.io
 [react-redux]: https://react-redux.js.org/introduction/getting-started
 [react-redux-hooks]: https://react-redux.js.org/api/hooks

@@ -9,8 +9,10 @@ import { loadArticles } from './store/articleReducer'
 
 const store = configureStore();
 
-window.store = store;
-window.loadArticles = loadArticles;
+if (process.env.NODE_ENV !== 'production') {
+  window.store = store;
+  window.loadArticles = loadArticles;
+}
 
 ReactDOM.render(
   <React.StrictMode>
