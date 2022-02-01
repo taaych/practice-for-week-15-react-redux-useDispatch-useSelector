@@ -4,7 +4,7 @@ In this short practice, you will list the titles of articles by loading data
 into the Redux store and then having a component _subscribe to_ / listen for
 changes to that data.
 
-## Set up
+## Setup
 
 Clone the starter repo accessible from the `Download Project` button at the
 bottom of this page and `cd` into the root directory.
