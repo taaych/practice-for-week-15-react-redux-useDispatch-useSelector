@@ -15,13 +15,12 @@ bottom of this page and `cd` into the root directory.
 ## `useDispatch`
 
 In order to load the data into the store, go to the `ArticleList` component.
-Import the [`useDispatch`][react-redux-hooks] hook from
-[`react-redux`][react-redux] and the `loadArticles` action creator from
-__src/store/articleReducer__. Inside the component, invoke the `useDispatch`
-hook and assign the result to a variable called `dispatch` to make the
-functionality available. Create a `useEffect` function that `dispatch`es the
-`loadArticles` function. It should only run one time. This will load the article
-data into the store after the first render.
+Import the [`useDispatch`] hook from [`react-redux`][react-redux] and the
+`loadArticles` action creator from __src/store/articleReducer__. Inside the
+component, invoke the `useDispatch` hook and assign the result to a variable
+called `dispatch` to make the functionality available. Create a `useEffect`
+function that `dispatch`es the `loadArticles` function. It should only run one
+time. This will load the article data into the store after the first render.
 
 After completing the `useEffect`, go to your browser and pull up the Redux
 DevTools. On the inspector side of the tools, click on the
@@ -58,18 +57,18 @@ React Hook useEffect has a missing dependency: 'dispatch'. Either include it or
 remove the dependency array
 ```
 
-This is a [warning][react-redux-hooks] from ESLint. `useEffect` thinks
-that the `dispatch` function--or any function not declared inside the
-`useEffect`--could potentially change. Go ahead and add `dispatch` to the array;
-your `useEffect` will still run only once, i.e., after the first render. Why?
-Because your dispatch function will remain stable and unchanged as long as you
-don't change the `store` passed to the `<Provider>` in your root __index.js__.
+This is a warning from ESLint. `useEffect` thinks that the `dispatch`
+function--or any function not declared inside the `useEffect`--could potentially
+change. Go ahead and add `dispatch` to the array; your `useEffect` will still
+run only once, i.e., after the first render. Why? Because your dispatch function
+will remain stable and unchanged as long as you don't change the `store` passed
+to the `<Provider>` in your root __index.js__.
 
 ## useSelector
 
 Now the `ArticleList` needs to subscribe to the store and listen for changes in
-the `articles` slice of state. The [`useSelector`][react-redux-hooks] hook
-handles this functionality.
+the `articles` slice of state. The [`useSelector`] hook handles this
+functionality.
 
 Import `useSelector` from `react-redux`. Below the `useDispatch`, create a
 variable called `articles` and assign it the value of an invoked `useSelector`.
@@ -131,4 +130,5 @@ If you are successful, your code should look similar to this:
    in state.
 
 [react-redux]: https://react-redux.js.org/introduction/getting-started
-[react-redux-hooks]: https://react-redux.js.org/api/hooks
+[`useDispatch`]: https://react-redux.js.org/api/hooks#usedispatch
+[`useSelector`]: https://react-redux.js.org/api/hooks#useselector
