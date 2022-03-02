@@ -6,11 +6,14 @@ changes to that data.
 
 ## Setup
 
-Clone the starter repo accessible from the `Download Project` button at the
-bottom of this page and `cd` into the root directory.
+Click the `Download Project` button at the bottom of this page to go to the
+starter repo, then load the repo into [CodeSandbox].
 
-1. Run `npm install` to load all the dependencies.
-2. Run `npm start` to start the server and run your app `localhost:3000`.
+You should also add the Redux DevTools to your browser extensions if you have
+not done so already. To add the extension in Chrome, go
+[here][add-ReduxDevTools]. For other browsers, search in your extension/add-on
+menu for Redux DevTools and follow the instructions for adding it to your
+browser.
 
 ## `useDispatch`
 
@@ -22,7 +25,8 @@ called `dispatch` to make the functionality available. Create a `useEffect`
 function that `dispatch`es the `loadArticles` function. It should only run one
 time. This will load the article data into the store after the first render.
 
-After completing the `useEffect`, go to your browser and pull up the Redux
+After completing the `useEffect`, click the `Open In New Window` button in the
+upper right of your sandbox browser. In the new window, pull up the Redux
 DevTools. On the inspector side of the tools, click on the
 `/articles/loadArticles` action. On the right side, click the `State` tab. When
 opening the results you should see that the `entries` array has now been filled
@@ -129,6 +133,8 @@ If you are successful, your code should look similar to this:
 2. Use the `useSelector` hook to subscribe to the store and listen for changes
    in state.
 
+[CodeSandbox]: https://codesandbox.io
+[add-ReduxDevTools]: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
 [react-redux]: https://react-redux.js.org/introduction/getting-started
 [`useDispatch`]: https://react-redux.js.org/api/hooks#usedispatch
 [`useSelector`]: https://react-redux.js.org/api/hooks#useselector
